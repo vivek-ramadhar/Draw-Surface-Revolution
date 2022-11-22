@@ -1,4 +1,5 @@
 from mpl_toolkits.mplot3d import Axes3D
+from draw import drawApp
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -28,7 +29,15 @@ def surface_rev(x, y, n):
 
     return [xn, yn, zn]
 
-n = 100
+app = drawApp()
+app.run()
+
+n = len(app.coords)
+x = [i[0] for i in app.coords]
+y = [400-i[1] for i in app.coords]
+
+x.reverse()
+y.reverse()
 
 fig = plt.figure(figsize=(12,6))
 # 2D plot
@@ -37,8 +46,8 @@ ax1 = fig.add_subplot(121)
 ax2 = fig.add_subplot(122,projection='3d')
 
 # First define function in xy-plane 
-y = np.linspace(0, 1, n)
-x = np.power(y, 3)
+#y = np.linspace(0, 1, n)
+#x = np.power(y, 3)
 
 surface = surface_rev(x, y, n)
 
