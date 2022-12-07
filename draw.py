@@ -28,13 +28,11 @@ class drawApp:
         self.app.destroy()
 
     def __init__(self) -> None:
-        #running = True
-        coords = []
         app = Tk()
         canvas = Canvas(app, bg='black')
         app.geometry("400x400")
 
-        self.coords = coords
+        self.coords = []
         self.app = app
         self.canvas = canvas
         self.running = True
